@@ -1,12 +1,5 @@
-//
-//  AppDelegate.swift
-//  Instagram
-//
-//  Created by 石田陵 on 2017/03/02.
-//  Copyright © 2017年 ryo.ishida. All rights reserved.
-//
-
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +9,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        FIRApp.configure()      // 追加
+        
+        // Adobeの管理画面で登録したアプリの API key と Client secret の文字列を設定する
+        AdobeUXAuthManager.shared().setAuthenticationParametersWithClientID("c4cdf541c52e4a089c2c75ab98c2fc3d", withClientSecret: "e9cd3d41-00fd-4eef-8185-d0db2dc42c1f")
+        
         return true
     }
 
